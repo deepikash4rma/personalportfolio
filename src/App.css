@@ -1,5 +1,97 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f2cba4;
+  font-family: sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
 .App {
+  width: 100vw;
+  height: 100vh;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Room {
+  width: 800px;
+  height: 600px;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateX(10deg);
+}
+
+/* Walls */
+.ceiling, .floor, .left-wall, .right-wall, .back-wall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f8d7b5;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+}
+
+.ceiling {
+  transform: rotateX(90deg) translateZ(300px);
+  background-color: #f6d3b1;
+}
+
+.floor {
+  transform: rotateX(90deg) translateZ(-300px);
+  background: linear-gradient(to bottom, #d4a676, #a67c52);
+}
+
+.left-wall {
+  width: 600px;
+  transform: rotateY(90deg) translateZ(-400px);
+  background-color: #e8b78a;
+  transform-origin: left;
+}
+
+.right-wall {
+  width: 600px;
+  transform: rotateY(90deg) translateZ(400px);
+  background-color: #e8b78a;
+  transform-origin: right;
+}
+
+.back-wall {
+  transform: translateZ(-300px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Navigation */
+.NavBar {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.NavBar a {
+  background-color: #add8ff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #888;
+  color: black;
+  transition: background 0.3s;
+}
+
+.NavBar a:hover {
+  background-color: #90cfff;
 }
 
 .App-logo {
@@ -40,3 +132,4 @@
 .button {
   background-color: purple;
 }
+

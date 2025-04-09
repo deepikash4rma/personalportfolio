@@ -1,7 +1,7 @@
 const Home = () => {
     return (
-        <div>
-            <h1>Home Page</h1>
+        <div className = "pageContent">
+            <h1 className = "title">Deepika's World</h1>
         </div>
     )
 }
