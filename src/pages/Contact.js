@@ -1,8 +1,10 @@
 const Contact = () => {
     return (
-        <div className = "pageContent">
-            <p>Phone: (747)242-9124 </p>
-            <p>Email: dpsharma@g.ucla.edu </p>
+        <div className="back-wall">
+            <div className="Frame">
+                <p>Phone: (747) 242–9124<br/>
+                Email: dpsharma@g.ucla.edu</p>
+            </div>
         </div>
     )
 }
