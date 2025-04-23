@@ -4,11 +4,9 @@ import './Projects.css';
 
 const Projects = () => {
   const projects = [
-    { id: 1, name: "Interactive Exhibit", description: "A dynamic display of multimedia experiences." },
-    { id: 2, name: "Virtual Archive", description: "Digitized documents and ancient texts." },
-    { id: 3, name: "Generative Art", description: "AI-assisted art created in real-time." },
-    { id: 4, name: "Finance Dashboard", description: "Live metrics visualized for decision-making." },
-    { id: 5, name: "Language Explorer", description: "Tools for analyzing linguistic patterns." }
+    { id: 1, name: "💲 Cheque-r", description: "A mobile app that helps users track debts and send payment reminders." },
+    { id: 2, name: "🌱 Sanctuary", description: "A mobile app designed to empower and protect women through safer commuting tools." },
+    { id: 3, name: "🎮 Wonky Kong", description: "A Donkey Kong–inspired game with custom art and playful levels." },
   ];
 
   return (

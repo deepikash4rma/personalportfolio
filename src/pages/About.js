@@ -10,8 +10,8 @@ const About = () => {
         <p>
           Hi, I’m Deepika — a Computer Science and Linguistics student at UCLA with a minor in Mathematics.
           I’m passionate about designing meaningful, user-centered technology, and I’m always excited to connect with others and explore new ways to create with code.
-          I currently serve in leadership roles with various clubs at UCLA,
-          where I help organize tech-focused initiatives on campus.
+          I currently serve in leadership roles within various clubs at UCLA,
+          where I help organize tech-focused initiatives and community events on campus.
         </p>
         <p className="meta-label">Updated April 2025</p>
       </div>
@@ -41,7 +41,7 @@ const About = () => {
           <h4>
             🎨 <a href="https://instagram.com/creativelabsucla" target="_blank" rel="noopener noreferrer">Creative Labs</a>
           </h4>
-          <p><strong>Software Frontend Developer</strong></p>
+          <p><strong>Frontend Developer</strong></p>
           <p>Building user interfaces and collaborating with cross-functional creative teams.</p>
           <p className="meta-label">Jan 2025 - Mar 2025</p>
         </div>
