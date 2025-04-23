@@ -1,54 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import NavBar from './pages/NavBar';
+import Zoom from './pages/Zoom';
+import IntroModal from './pages/IntroModal';
+import './App.css';
 
 function App() {
-  const [activeWall, setActiveWall] = useState('home'); // Track the current wall
+  const [activeWall, setActiveWall] = useState('home');
+  const [hasSeenIntro, setHasSeenIntro] = useState(false);
+{!hasSeenIntro && <IntroModal onClose={() => setHasSeenIntro(true)} />}
 
-  const handleNavigation = (wall) => {
-    setActiveWall(wall); // Change the wall when a link is clicked
-  };
+return (
+  <div className="App">
+    {!hasSeenIntro && <IntroModal onClose={() => setHasSeenIntro(true)} />}
 
-  return (
-    <div className="App">
-      <div className="Room">
-        {/* Walls */}
-        <div className={`wall back-wall ${activeWall === 'home' ? 'active' : ''}`}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
-        <div className={`wall front-wall ${activeWall === 'contact' ? 'active' : ''}`}>
-          <Routes>
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-        <div className={`wall left-wall ${activeWall === 'about' ? 'active' : ''}`}>
-          <Routes>
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
-        <div className={`wall right-wall ${activeWall === 'projects' ? 'active' : ''}`}>
-          <Routes>
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </div>
+    <div className="NavBar">
+      <Link onClick={() => setActiveWall('home')}>Home</Link>
+      <Link onClick={() => setActiveWall('about')}>About</Link>
+      <Link onClick={() => setActiveWall('projects')}>Projects</Link>
+      <Link onClick={() => setActiveWall('contact')}>Contact</Link>
+    </div>
 
-        {/* Navigation */}
-        <nav className="NavBar">
-          <Link to="/" onClick={() => handleNavigation('home')}>Home</Link>
-          <Link to="/about" onClick={() => handleNavigation('about')}>About</Link>
-          <Link to="/projects" onClick={() => handleNavigation('projects')}>Projects</Link>
-          <Link to="/contact" onClick={() => handleNavigation('contact')}>Contact</Link>
-        </nav>
+    <div className="Room">
+      <div className={`Wall back-wall ${activeWall === 'home' ? 'active' : ''}`}>
+        <div className="content-frame"><Home /></div>
+      </div>
+      <div className={`Wall left-wall ${activeWall === 'about' ? 'active' : ''}`}>
+        <div className="content-frame"><About /></div>
+      </div>
+      <div className={`Wall right-wall ${activeWall === 'projects' ? 'active' : ''}`}>
+        <div className="content-frame"><Projects /></div>
+      </div>
+      <div className={`Wall front-wall ${activeWall === 'contact' ? 'active' : ''}`}>
+        <div className="content-frame"><Contact /></div>
+      </div>
+
+      <div className="Floor" />
+      <div className="Ceiling">
+        <div className="spotlight"></div>
+        <div className="spotlight"></div>
       </div>
     </div>
-  );
+  </div>
+);
 }
 
 export default App;

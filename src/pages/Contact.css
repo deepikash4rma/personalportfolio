@@ -36,3 +36,12 @@
   .social-links a:hover {
     text-decoration: underline;
   }
+  
+  .note-box {
+    margin-top: 1rem;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+  }

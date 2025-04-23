@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './Contact';
 import './Contact.css';
 
 function Contact() {
   const [copied, setCopied] = useState(false);
-  const email = 'dpsharma@g.ucla.edu'; // replace with your real email
+  const email = 'dpsharma@g.ucla.edu';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -16,15 +15,14 @@ function Contact() {
     <div className="contact-container">
       <h2>Contact Me</h2>
       <p>Email: <span className="email">{email}</span></p>
-      <button className="copy-button" onClick={handleCopy}>
-        {copied ? 'Copied!' : 'Copy Email'}
-      </button>
+      <button className="copy-button" onClick={handleCopy}>{copied ? 'Copied!' : 'Copy Email'}</button>
 
       <div className="social-links">
-        <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">LinkedIn</a>
-        {/* Add more if you want */}
+        <a href="https://github.com/deepikash4rma" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/shar-deepika" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
+
+      <textarea placeholder="Leave a note for me!" rows="3" className="note-box"></textarea>
     </div>
   );
 }

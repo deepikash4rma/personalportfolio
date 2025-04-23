@@ -1,0 +1,35 @@
+.gallery-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #3b3b3b;
+    text-align: center;
+  }
+  
+  .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .project-frame {
+    background: #eae4db;
+    border: 6px solid #c6bab1;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-frame:hover {
+    transform: translateY(-6px);
+  }
+  
+  .project-card {
+    background: #fdfaf5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #3b3b3b;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  }

@@ -1,47 +1,22 @@
-// src/pages/Home.js
 import React from 'react';
-import { motion } from 'framer-motion';
-import './Home';
 import './Home.css';
-import { FaCode, FaPaintBrush, FaRobot } from 'react-icons/fa';
+import portrait from '../assets/flowerfields.jpeg'; // Update this path if needed
 
-function Home() {
+const Home = () => {
   return (
-    <motion.div
-      className="home-container"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h1 className="hero-title">Hi, I’m Deepika Sharma</h1>
-      <p className="hero-subtitle">I build interactive, beautiful web experiences.</p>
+    <div className="home-wall">
+      <div className="spotlight-beam" />
 
-      <div className="skills-section">
-        <motion.div
-          className="skill-card"
-          whileHover={{ scale: 1.1, rotate: 2 }}
-        >
-          <FaCode size={40} />
-          <p>Developer</p>
-        </motion.div>
-        <motion.div
-          className="skill-card"
-          whileHover={{ scale: 1.1, rotate: -2 }}
-        >
-          <FaPaintBrush size={40} />
-          <p>Designer</p>
-        </motion.div>
-        <motion.div
-          className="skill-card"
-          whileHover={{ scale: 1.1, rotate: 2 }}
-        >
-          <FaRobot size={40} />
-          <p>Creative Coder</p>
-        </motion.div>
+      <div className="gallery-frame">
+        <img src={portrait} alt="Deepika Sharma" className="portrait" />
+        <h1 className="plaque-title">Deepika Sharma</h1>
+        <h2 className="plaque-subtitle">
+          UCLA student, software developer, and flautist.
+        </h2>
+        <p className="plaque-signature">— Designed & developed by me!</p>
       </div>
-    </motion.div>
+    </div>
   );
-}
+};
 
 export default Home;

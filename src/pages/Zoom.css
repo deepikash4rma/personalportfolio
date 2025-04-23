@@ -1,0 +1,33 @@
+.zoom-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+  }
+  
+  .zoom-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .zoom-container {
+    cursor: zoom-in;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 6;
+  }
+  
+  .zoom-container.zoomed {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(1.25);
+    cursor: zoom-out;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: white;
+    padding: 2rem;
+    z-index: 10;
+  }
