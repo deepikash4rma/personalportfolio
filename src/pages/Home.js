@@ -13,7 +13,7 @@ const Home = () => {
         <h2 className="plaque-subtitle">
           UCLA student, software developer, and flautist.
         </h2>
-        <p className="plaque-signature">— Designed & developed w/ ☕.</p>
+        <p className="plaque-signature">— Designed & developed by me!</p>
       </div>
     </div>
   );

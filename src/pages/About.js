@@ -24,7 +24,7 @@ const About = () => {
             📊 <a href="https://instagram.com/umsaatucla" target="_blank" rel="noopener noreferrer">UMSA</a>
           </h4>
           <p><strong>Director of Marketing</strong></p>
-          <p>Craft and share event promotions, design social media content, and collaborate with the board to plan initiatives for the Undergraduate Mathematics Student Association.</p>
+          <p>Crafted and shared event promotions, designed social media content, and collaborated with the board to plan initiatives for the Undergraduate Mathematics Student Association.</p>
           <p className="meta-label">Mar 2025 - Present</p>
         </div>
 
@@ -33,7 +33,7 @@ const About = () => {
             👩‍💻 <a href="https://instagram.com/uclaacmw" target="_blank" rel="noopener noreferrer">ACM-W</a>
           </h4>
           <p><strong>Projects Officer</strong></p>
-          <p>Coordinate and help lead teams focused on empowering women in computing; assist with event planning, team support, and club-wide initiatives.</p>
+          <p>Coordinated and helped lead teams focused on empowering women in computing; assisted with event planning, team support, and club-wide initiatives.</p>
           <p className="meta-label">Nov 2024 - Present</p>
         </div>
 
@@ -42,7 +42,7 @@ const About = () => {
             🎨 <a href="https://instagram.com/creativelabsucla" target="_blank" rel="noopener noreferrer">Creative Labs</a>
           </h4>
           <p><strong>Frontend Developer</strong></p>
-          <p>Designed and developed the frontend of a creative app alongside designers and product managers</p>
+          <p>Designed and developed the frontend of a creative app alongside designers and product managers.</p>
           <p className="meta-label">Jan 2025 - Mar 2025</p>
         </div>
 
