@@ -24,7 +24,7 @@ const About = () => {
             📊 <a href="https://instagram.com/umsaatucla" target="_blank" rel="noopener noreferrer">UMSA</a>
           </h4>
           <p><strong>Director of Marketing</strong></p>
-          <p>Promoting events and designing visuals for the Undergraduate Mathematics Student Association.</p>
+          <p>Craft and share event promotions, design social media content, and collaborate with the board to plan initiatives for the Undergraduate Mathematics Student Association.</p>
           <p className="meta-label">Mar 2025 - Present</p>
         </div>
 
@@ -33,7 +33,7 @@ const About = () => {
             👩‍💻 <a href="https://instagram.com/uclaacmw" target="_blank" rel="noopener noreferrer">ACM-W</a>
           </h4>
           <p><strong>Projects Officer</strong></p>
-          <p>Organizing and supporting technical project teams for women in computing.</p>
+          <p>Coordinate and help lead teams focused on empowering women in computing; assist with event planning, team support, and club-wide initiatives.</p>
           <p className="meta-label">Nov 2024 - Present</p>
         </div>
 
@@ -42,7 +42,7 @@ const About = () => {
             🎨 <a href="https://instagram.com/creativelabsucla" target="_blank" rel="noopener noreferrer">Creative Labs</a>
           </h4>
           <p><strong>Frontend Developer</strong></p>
-          <p>Building user interfaces and collaborating with cross-functional creative teams.</p>
+          <p>Designed and developed the frontend of a creative app alongside designers and product managers</p>
           <p className="meta-label">Jan 2025 - Mar 2025</p>
         </div>
 
@@ -51,7 +51,7 @@ const About = () => {
             💻 <a href="https://instagram.com/ucladevx" target="_blank" rel="noopener noreferrer">DevX</a>
           </h4>
           <p><strong>Software Development Intern</strong></p>
-          <p>Contributing to student-led products through code, feedback, and iteration.</p>
+          <p>Designed and developed a fully immersive 3D personal portfolio website from scratch, focusing on spatial layout and interactive UI. </p>
           <p className="meta-label">Feb 2025 - Present</p>
         </div>
       </div>
