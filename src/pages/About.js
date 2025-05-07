@@ -13,7 +13,7 @@ const About = () => {
           I currently serve in leadership roles within various clubs at UCLA,
           where I help organize tech-focused initiatives and community events on campus.
         </p>
-        <p className="meta-label">Updated April 2025</p>
+        <p className="meta-label">Updated May 2025</p>
       </div>
 
       <h3 className="club-header fade-in" style={{ '--fade-delay': '0.2s' }}>Campus Involvements</h3>
@@ -24,7 +24,7 @@ const About = () => {
             📊 <a href="https://instagram.com/umsaatucla" target="_blank" rel="noopener noreferrer">UMSA</a>
           </h4>
           <p><strong>Director of Marketing</strong></p>
-          <p>Crafted and shared event promotions, designed social media content, and collaborated with the board to plan initiatives for the Undergraduate Mathematics Student Association.</p>
+          <p>Designed and managed promotional campaigns to increase engagement for academic and networking events.</p>
           <p className="meta-label">Mar 2025 - Present</p>
         </div>
 
@@ -33,7 +33,7 @@ const About = () => {
             👩‍💻 <a href="https://instagram.com/uclaacmw" target="_blank" rel="noopener noreferrer">ACM-W</a>
           </h4>
           <p><strong>Projects Officer</strong></p>
-          <p>Coordinated and helped lead teams focused on empowering women in computing; assisted with event planning, team support, and club-wide initiatives.</p>
+          <p>Lead ACM-W’s Technology Fellowship Program, mentoring students and organizing workshops to help peers explore full-stack development and product management.</p>
           <p className="meta-label">Nov 2024 - Present</p>
         </div>
 
@@ -42,7 +42,7 @@ const About = () => {
             🎨 <a href="https://instagram.com/creativelabsucla" target="_blank" rel="noopener noreferrer">Creative Labs</a>
           </h4>
           <p><strong>Frontend Developer</strong></p>
-          <p>Designed and developed the frontend of a creative app alongside designers and product managers.</p>
+          <p>Built key frontend components for Sanctuary, a safety app offering real-time risk alerts and a “Safe Walk” feature.</p>
           <p className="meta-label">Jan 2025 - Mar 2025</p>
         </div>
 
