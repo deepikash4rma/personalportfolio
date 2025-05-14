@@ -4,7 +4,7 @@ import './About.css';
 const About = () => {
   return (
     <div className="content-frame">
-      <h2 className="about-title fade-in">👋 About Me</h2>
+      <h2 className="about-title fade-in">About Me</h2>
 
       <div className="frame-mount fade-in" style={{ '--fade-delay': '0.1s' }}>
         <p>

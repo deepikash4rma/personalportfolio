@@ -21,7 +21,7 @@ const Projects = () => {
 
   return (
     <div className="content-frame">
-      <h2 className="gallery-title fade-in">🖼️ Featured Projects</h2>
+      <h2 className="gallery-title fade-in">Featured Projects</h2>
       <div className="project-gallery">
         {projects.map((project, index) => (
           <Zoom key={project.id}>
