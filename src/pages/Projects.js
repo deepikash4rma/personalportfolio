@@ -4,7 +4,7 @@ import './Projects.css';
 
 const Projects = () => {
   const projects = [
-    { id: 1, name: "💲 Cheque-r", description: "A mobile app that helps users track debts and send payment reminders." },
+    { id: 1, name: "$ Cheque-r", description: "A mobile app that helps users track debts and send payment reminders." },
     { id: 2, name: "🌱 Sanctuary", description: "A mobile app designed to empower and protect women through safer commuting tools." },
     { id: 3, name: "🎮 Wonky Kong", description: "A Donkey Kong–inspired game with custom art and playful levels." },
   ];
