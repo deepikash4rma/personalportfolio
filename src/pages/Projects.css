@@ -15,12 +15,12 @@
 
 .project-frame {
   width: 280px;
-  height: 200px; /* Enforced height to match card */
-  animation: fadeIn 0.8s ease forwards;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent flip overflow */
+  overflow: hidden;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .flip-card {
@@ -80,7 +80,6 @@
   line-height: 1.5;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,7 +91,6 @@
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 600px) {
   .project-frame {
     width: 90vw;

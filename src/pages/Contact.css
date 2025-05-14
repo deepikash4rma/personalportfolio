@@ -1,47 +1,68 @@
 .contact-container {
-    text-align: center;
-    padding: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.email {
+  font-weight: bold;
+  color: #333;
+}
+
+.copy-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.copy-button:hover {
+  background-color: #555;
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.note-box {
+  margin-top: 1rem;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 1.5rem 1rem;
   }
-  
-  .email {
-    font-weight: bold;
-    color: #333;
-  }
-  
+
   .copy-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
-  
-  .copy-button:hover {
-    background-color: #555;
-  }
-  
-  .social-links {
-    margin-top: 2rem;
-  }
-  
+
   .social-links a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #0077cc;
+    margin: 0 0.5rem;
+    font-size: 0.95rem;
   }
-  
-  .social-links a:hover {
-    text-decoration: underline;
-  }
-  
+
   .note-box {
-    margin-top: 1rem;
-    width: 80%;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: none;
+    width: 95%;
+    font-size: 0.95rem;
   }
+}
