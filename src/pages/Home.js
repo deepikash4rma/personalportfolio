@@ -11,7 +11,7 @@ const Home = () => {
         <img src={portrait} alt="Deepika Sharma" className="portrait" />
         <h1 className="plaque-title">Deepika Sharma</h1>
         <h2 className="plaque-subtitle">
-          UCLA student, software developer, and flautist.
+        Learning to blend logic and creativity through code.
         </h2>
         <p className="plaque-signature">— Designed & developed by me!</p>
       </div>
