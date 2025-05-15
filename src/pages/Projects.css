@@ -15,13 +15,12 @@
 
 .project-frame {
   width: 280px;
-  height: 200px;
+  height: 200px; /* Enforced height to match card */
   animation: fadeIn 0.8s ease forwards;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  cursor: pointer;
+  overflow: hidden; /* Prevent flip overflow */
 }
 
 .flip-card {
@@ -43,7 +42,8 @@
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -94,17 +94,9 @@
 
 /* Mobile responsiveness */
 @media (max-width: 600px) {
-  .project-gallery {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
   .project-frame {
-    width: calc(100% - 20px);
-    max-width: 320px;
-    height: 180px;
-    margin: 0 10px;
+    width: 90vw;
+    height: 220px;
   }
 
   .flip-card-front h3 {
