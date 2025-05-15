@@ -5,28 +5,45 @@
   text-align: center;
 }
 
+.content-frame {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e8e0d0;
+}
+
 .project-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .project-frame {
   width: 280px;
-  height: 200px; /* Enforced height to match card */
-  animation: fadeIn 0.8s ease forwards;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent flip overflow */
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 .flip-card {
   width: 100%;
   height: 100%;
-  perspective: 1000px;
   position: relative;
 }
 
@@ -36,6 +53,7 @@
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
   position: relative;
+  box-shadow: none;
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -50,13 +68,11 @@
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  border: 6px solid #e9dfcf;
-  outline: 2px solid #b7aa9d;
-  border-radius: 16px;
+  border: 4px solid #e9dfcf;
+  outline: 1px solid #b7aa9d;
+  border-radius: 14px;
   background: #fffaf5;
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.05),
-    inset 0 0 0 3px #f7f0e8;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +96,6 @@
   line-height: 1.5;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,11 +107,19 @@
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 600px) {
+  .gallery-title {
+    font-size: 1.5rem;
+  }
+
+  .content-frame {
+    padding: 2rem 1rem;
+  }
+
   .project-frame {
-    width: 90vw;
-    height: 220px;
+    width: 100%;
+    max-width: 90vw;
+    height: 160px;
   }
 
   .flip-card-front h3 {
@@ -105,5 +128,10 @@
 
   .flip-card-back {
     font-size: 0.95rem;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: 0.5rem;
   }
 }
