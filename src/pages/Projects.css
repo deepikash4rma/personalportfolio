@@ -119,7 +119,11 @@
   .project-frame {
     width: 100%;
     max-width: 90vw;
-    height: 160px;
+    height: 180px;
+  }
+
+  .flip-card {
+    height: 100%;
   }
 
   .flip-card-front h3 {
