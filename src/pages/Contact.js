@@ -19,7 +19,7 @@ function Contact() {
 
       <div className="social-links">
         <a href="https://github.com/deepikash4rma" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/shar-deepika" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://linkedin.com/in/deepikash4rma/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
 
       <textarea placeholder="Leave a note for me!" rows="3" className="note-box"></textarea>
