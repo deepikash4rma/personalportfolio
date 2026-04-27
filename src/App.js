@@ -4,17 +4,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import NavBar from './pages/NavBar';
-import Zoom from './pages/Zoom';
 import IntroModal from './pages/IntroModal';
 import './App.css';
 
 function App() {
   const [activeWall, setActiveWall] = useState('home');
   const [hasSeenIntro, setHasSeenIntro] = useState(false);
-{!hasSeenIntro && <IntroModal onClose={() => setHasSeenIntro(true)} />}
 
-return (
+  return (
   <div className="App">
     {!hasSeenIntro && <IntroModal onClose={() => setHasSeenIntro(true)} />}
 
