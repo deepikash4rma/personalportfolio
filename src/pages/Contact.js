@@ -41,8 +41,8 @@ function Contact() {
       <button className="copy-button" onClick={handleCopy}>{copied ? 'Copied!' : 'Copy Email'}</button>
 
       <div className="social-links">
-        <a href="https://github.com/deepikash4rma" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/deepikash4rma/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.github.com/deepikash4rma" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/deepikash4rma/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
 
       <form className="note-form" onSubmit={handleSendNote}>
