@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import portrait from '../assets/headshot.jpg';
+import portrait from '../assets/newheadshot.jpeg';
 
 const Home = () => {
   return (
