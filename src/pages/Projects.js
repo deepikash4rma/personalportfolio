@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Zoom from './Zoom';
 import './Projects.css';
 
 const Projects = () => {
@@ -20,28 +19,38 @@ const Projects = () => {
   };
 
   return (
-    <div className="content-frame">
+    <div className="projects-page">
       <h2 className="gallery-title fade-in">Featured Projects</h2>
+      <p className="gallery-hint">Tap a card to flip</p>
       <div className="project-gallery">
         {projects.map((project, index) => (
-          <Zoom key={project.id}>
-            <div
-              className="project-frame fade-in"
-              style={{ '--fade-delay': `${0.1 + index * 0.1}s` }}
-              onClick={() => toggleFlip(index)}
-            >
-              <div className={`flip-card ${flipped[index] ? 'flipped' : ''}`}>
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <h3>{project.name}</h3>
-                  </div>
-                  <div className="flip-card-back">
-                    <p>{project.description}</p>
-                  </div>
+          <div
+            key={project.id}
+            className="project-frame fade-in"
+            style={{ '--fade-delay': `${0.1 + index * 0.1}s` }}
+            role="button"
+            tabIndex={0}
+            aria-pressed={flipped[index]}
+            aria-label={`${project.name}. ${flipped[index] ? 'Showing details' : 'Tap to show details'}`}
+            onClick={() => toggleFlip(index)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlip(index);
+              }
+            }}
+          >
+            <div className={`flip-card ${flipped[index] ? 'flipped' : ''}`}>
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <h3>{project.name}</h3>
+                </div>
+                <div className="flip-card-back">
+                  <p>{project.description}</p>
                 </div>
               </div>
             </div>
-          </Zoom>
+          </div>
         ))}
       </div>
     </div>

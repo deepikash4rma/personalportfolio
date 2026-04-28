@@ -156,3 +156,36 @@
     0%, 100% { opacity: 0.5; transform: translateX(-50%) scaleY(1); }
     50% { opacity: 0.7; transform: translateX(-50%) scaleY(1.05); }
   }
+
+  @media (max-width: 768px) {
+    .home-wall {
+      padding: 4.5rem 1rem 3rem;
+      min-height: auto;
+    }
+
+    .gallery-frame {
+      width: 100%;
+      padding: 1.75rem 1rem;
+      margin-top: 0;
+      padding-top: 2rem;
+    }
+
+    .plaque-title {
+      font-size: 1.85rem;
+    }
+
+    .plaque-subtitle {
+      font-size: 1rem;
+    }
+
+    .portrait {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .plaque-title {
+      font-size: 1.55rem;
+    }
+  }

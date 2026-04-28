@@ -54,3 +54,31 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+@media (max-width: 600px) {
+  .intro-modal {
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+      env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    align-items: flex-start;
+    padding-top: max(2rem, env(safe-area-inset-top, 0px));
+    box-sizing: border-box;
+  }
+
+  .intro-content {
+    padding: 1.5rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .intro-content h1 {
+    font-size: 1.65rem;
+  }
+
+  .intro-content p {
+    font-size: 1rem;
+  }
+
+  .intro-content button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -20,10 +20,12 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: #f4f0e9;
 }
 
@@ -31,11 +33,14 @@ html, body {
 .Room {
   width: 100%;
   max-width: 1440px;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
   position: relative;
   margin: 0 auto;
   perspective: 2000px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -152,4 +157,58 @@ p {
   font-style: normal;
   text-align: center;
   letter-spacing: 0.3px;
+}
+
+/* ——— Mobile & touch-friendly layout ——— */
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .Room {
+    perspective: 1400px;
+    min-height: 100svh;
+  }
+
+  .Wall {
+    padding: 1rem 0.75rem 1.5rem;
+    align-items: stretch;
+  }
+
+  /* Softer “bring forward” so walls don’t feel like they jump off-screen */
+  .Wall.active {
+    transform: translateZ(100px);
+  }
+
+  /* 800×800 decorative planes cause horizontal overflow on phones */
+  .Ceiling,
+  .Floor {
+    display: none;
+  }
+
+  .content-frame {
+    padding: 1.25rem 1rem;
+    margin-top: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Wall.active {
+    transform: translateZ(72px);
+  }
 }
