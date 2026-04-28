@@ -20,26 +20,32 @@
   flex-wrap: nowrap;
 }
 
-.NavBar a {
+.NavBar a,
+.NavBar button {
   color: #3f3f3f;
   text-decoration: none;
   font-weight: 600;
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.85);
+  border: none;
   border-radius: 20px;
   transition: all 0.25s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   white-space: nowrap;
   font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
 }
 
-.NavBar a:hover {
+.NavBar a:hover,
+.NavBar button:hover {
   background: #f3ede1;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.NavBar a.active {
+.NavBar a.active,
+.NavBar button.active {
   background: #e6d8c2;
   color: #2a2a2a;
   font-weight: 700;
@@ -61,7 +67,8 @@ body {
     overflow-x: auto;
   }
 
-  .NavBar a {
+  .NavBar a,
+  .NavBar button {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
     flex: 0 0 auto;

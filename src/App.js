@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import IntroModal from './pages/IntroModal';
 import './App.css';
+import './pages/NavBar.css';
 
 function App() {
   const [activeWall, setActiveWall] = useState('home');
@@ -15,12 +15,36 @@ function App() {
   <div className="App">
     {!hasSeenIntro && <IntroModal onClose={() => setHasSeenIntro(true)} />}
 
-    <div className="NavBar">
-      <Link onClick={() => setActiveWall('home')}>Home</Link>
-      <Link onClick={() => setActiveWall('about')}>About</Link>
-      <Link onClick={() => setActiveWall('projects')}>Projects</Link>
-      <Link onClick={() => setActiveWall('contact')}>Contact</Link>
-    </div>
+    <nav className="NavBar" aria-label="Main">
+      <button
+        type="button"
+        className={activeWall === 'home' ? 'active' : ''}
+        onClick={() => setActiveWall('home')}
+      >
+        Home
+      </button>
+      <button
+        type="button"
+        className={activeWall === 'about' ? 'active' : ''}
+        onClick={() => setActiveWall('about')}
+      >
+        About
+      </button>
+      <button
+        type="button"
+        className={activeWall === 'projects' ? 'active' : ''}
+        onClick={() => setActiveWall('projects')}
+      >
+        Projects
+      </button>
+      <button
+        type="button"
+        className={activeWall === 'contact' ? 'active' : ''}
+        onClick={() => setActiveWall('contact')}
+      >
+        Contact
+      </button>
+    </nav>
 
     <div className="Room">
       <div className={`Wall back-wall ${activeWall === 'home' ? 'active' : ''}`}>

@@ -39,7 +39,7 @@ const About = () => {
 
         <div className="club-card fade-in" style={{ '--fade-delay': '0.6s' }}>
           <h4>
-            💻 <a href="http://www.stat.ucla.edu/~guangcheng/" target="_blank" rel="noopener noreferrer">DevX</a>
+            💻 <a href="http://www.stat.ucla.edu/~guangcheng/" target="_blank" rel="noopener noreferrer">Trustworthy AI Lab</a>
           </h4>
           <p><strong>Software Engineering Intern</strong></p>
           <p>Built a conversational table-reasoning workflow with a Next.js/React frontend and a LangGraph/MultiTableAgent
