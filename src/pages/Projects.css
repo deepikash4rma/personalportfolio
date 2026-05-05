@@ -1,47 +1,54 @@
 .projects-page {
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .gallery-title {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #3b3b3b;
   text-align: center;
 }
 
 .gallery-hint {
-  margin: 0 0 1.25rem;
-  font-size: 0.9rem;
-  color: #6c6c6c;
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  color: #8a827a;
   text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .project-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem 1.25rem;
+  margin-top: 0.25rem;
+  justify-items: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-frame {
-  width: 280px;
-  height: 200px;
+  width: 100%;
+  max-width: 340px;
+  min-height: 300px;
+  height: 300px;
   animation: fadeIn 0.8s ease forwards;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: visible;
+  align-items: stretch;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .flip-card {
   width: 100%;
   height: 100%;
-  perspective: 1200px;
+  perspective: 1400px;
   position: relative;
   transform: translateZ(0);
 }
@@ -50,7 +57,7 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -67,41 +74,122 @@
   left: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border: 6px solid #e9dfcf;
-  outline: 2px solid #b7aa9d;
-  border-radius: 16px;
-  background: #fffaf5;
+  border-radius: 18px;
+  border: 1px solid rgba(183, 170, 157, 0.45);
+  background: linear-gradient(165deg, #fffdfa 0%, #faf3ea 100%);
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.05),
-    inset 0 0 0 3px #f7f0e8;
+    0 12px 32px rgba(45, 36, 30, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.75) inset;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.1rem 1.15rem;
   text-align: center;
   box-sizing: border-box;
   overflow: hidden;
 }
 
+.flip-card-front {
+  flex-direction: column;
+}
+
+.flip-card-front-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  max-height: 100%;
+}
+
 .flip-card-front h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: #3b3b3b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2f2823;
   margin: 0;
+  line-height: 1.3;
+}
+
+.project-stack {
+  font-size: 0.78rem;
+  color: #6b635c;
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.project-period {
+  font-size: 0.8rem;
+  color: #8a827a;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.project-link-front {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #5c4033;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(92, 64, 51, 0.35);
+  padding-bottom: 1px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-link-front:hover {
+  color: #3e2c21;
+  border-bottom-color: rgba(62, 44, 33, 0.55);
 }
 
 .flip-card-back {
   transform: rotateY(180deg);
-  font-size: 1rem;
-  color: #4a4a4a;
+  padding: 0.85rem 1rem;
+}
+
+.flip-card-back-scroll {
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(183, 170, 157, 0.6) transparent;
+}
+
+.project-bullets {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.82rem;
+  color: #3d3835;
+  line-height: 1.45;
+}
+
+.project-bullets li {
+  margin-bottom: 0.5rem;
+}
+
+.project-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.project-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a4541;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -115,26 +203,29 @@
   }
 
   .gallery-hint {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .project-gallery {
-    gap: 1.25rem;
-    flex-direction: column;
-    align-items: center;
+    gap: 1.35rem;
+    grid-template-columns: 1fr;
   }
 
   .project-frame {
-    width: min(100%, 340px);
-    height: 200px;
     max-width: 100%;
+    min-height: 280px;
+    height: 280px;
   }
 
   .flip-card-front h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
-  .flip-card-back {
-    font-size: 0.9rem;
+  .project-bullets {
+    font-size: 0.78rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
   }
 }

@@ -23,29 +23,51 @@ const About = () => {
           <h4>
             📊 <a href="https://instagram.com/umsaatucla" target="_blank" rel="noopener noreferrer">UMSA</a>
           </h4>
-          <p><strong>Vice President</strong></p>
-          <p>Designed and managed promotional campaigns to increase engagement for academic and networking events.</p>
-          <p className="meta-label">Feb 2025 - Present</p>
+          <p className="club-full-name">Undergraduate Mathematics Student Association</p>
+          <p className="role-title"><strong>Vice President</strong></p>
+          <p className="role-dates">Feb 2025 – Present</p>
+          <ul className="role-bullets">
+            <li>
+              Lead sponsor outreach and maintain partnerships with 2 external organizations, coordinating logistics for
+              8–10 events per quarter with 100+ attendees per event.
+            </li>
+            <li>
+              Direct 5 functional leads (marketing, communications, outreach, finance, mentorship), overseeing the
+              execution of club initiatives and driving 30%+ growth in engagement.
+            </li>
+          </ul>
         </div>
 
         <div className="club-card fade-in" style={{ '--fade-delay': '0.4s' }}>
           <h4>
             👩‍💻 <a href="https://instagram.com/uclaacmw" target="_blank" rel="noopener noreferrer">ACM-W</a>
           </h4>
-          <p><strong>Co-President</strong></p>
-          <p>Lead ACM-W’s Technology Fellowship Program, mentoring students and organizing workshops to help peers explore full-stack development and product management.</p>
-          <p className="meta-label">Feb 2026 - Present</p>
+          <p className="club-full-name">Association for Computing Machinery – Women (ACM-W)</p>
+          <p className="role-title"><strong>Co-President</strong></p>
+          <p className="role-dates">Feb 2026 – Present</p>
+          <ul className="role-bullets">
+            <li>
+              Oversee operations for a community of 50+ members, managing an $8K+ budget, coordinating logistics, and
+              collaborating across ACM committees to execute 6–8 events per quarter.
+            </li>
+            <li>
+              Lead the Technology Fellowship Program, mentoring 50–60 students through full-stack development and
+              product management, with a 90%+ completion rate and 10+ projects delivered in teams.
+            </li>
+          </ul>
         </div>
 
-        <div className="club-card fade-in" style={{ '--fade-delay': '0.6s' }}>
+        <div className="club-card fade-in" style={{ '--fade-delay': '0.5s' }}>
           <h4>
             💻 <a href="http://www.stat.ucla.edu/~guangcheng/" target="_blank" rel="noopener noreferrer">Trustworthy AI Lab</a>
           </h4>
-          <p><strong>Software Engineering Intern</strong></p>
-          <p>Built a conversational table-reasoning workflow with a Next.js/React frontend and a LangGraph/MultiTableAgent
+          <p className="role-title"><strong>Software Engineering Intern</strong></p>
+          <p className="role-dates">Mar 2026 – Present</p>
+          <p>
+            Built a conversational table-reasoning workflow with a Next.js/React frontend and a LangGraph/MultiTableAgent
             backend on AWS Lambda, including streaming responses, fallback handling, exportable table outputs, and
-            persisted per-message thinking/tool status. </p>
-          <p className="meta-label">Mar 2026 - Present</p>
+            persisted per-message thinking/tool status.
+          </p>
         </div>
       </div>
     </div>
