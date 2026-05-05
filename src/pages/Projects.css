@@ -49,12 +49,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   gap: 1.25rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .project-tile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  min-height: 0;
   border-radius: 14px;
   animation: tileReveal 0.65s ease forwards;
   animation-delay: var(--fade-delay, 0s);
@@ -93,6 +95,10 @@
 
 .project-tile__face {
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 11.5rem;
   padding: 1.35rem 1.15rem 1.15rem;
   border-radius: 14px;
   background: linear-gradient(165deg, #fffdfa 0%, #f6ebe1 100%);
@@ -126,6 +132,7 @@
   flex-direction: column;
   align-items: stretch;
   gap: 0.65rem;
+  flex: 1 1 auto;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -215,21 +222,37 @@
   margin-left: 0.15rem;
 }
 
+.project-tile__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.65rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  align-items: center;
+}
+
 .project-tile__link {
-  display: inline-block;
-  margin-top: 0.65rem;
-  padding-left: 0.05rem;
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #5c4033;
   text-decoration: none;
-  border-bottom: 1px solid rgba(92, 64, 51, 0.35);
-  width: fit-content;
-  align-self: flex-start;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(183, 170, 157, 0.55);
+  background: rgba(255, 255, 255, 0.7);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .project-tile__link:hover {
   color: #3e2c21;
-  border-bottom-color: rgba(62, 44, 33, 0.55);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(92, 64, 51, 0.35);
+}
+
+.project-tile__link--git {
+  color: #3d3530;
 }
 
 .project-tile__link:focus-visible {

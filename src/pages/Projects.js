@@ -7,6 +7,7 @@ const projects = [
     name: 'TryMe! Fitness Challenge',
     stack: ['React', 'Node.js', 'MongoDB', 'Express'],
     period: 'Oct. 2025 – present',
+    github: 'https://github.com/parnika-c/try-me',
     notes: [
       'Week-long challenges, daily check-ins, and leaderboards that actually update live — plus avatars so it feels a bit more human.',
       'Built auth and filtering on the side; we used Git branches like grown-ups and threw Artillery at it before a crew of ~15 friends beta tested.',
@@ -14,10 +15,11 @@ const projects = [
   },
   {
     id: 2,
-    name: 'This portfolio',
+    name: 'Personal portfolio',
     stack: ['React', 'Three.js', 'Framer Motion'],
     period: 'Jan. 2025 – present',
-    link: { href: 'https://deepikash4rma.vercel.app', label: 'deepikash4rma.vercel.app' },
+    site: { href: 'https://deepikash4rma.vercel.app', label: 'Live site' },
+    github: 'https://github.com/deepikash4rma/personalportfolio',
     notes: [
       'A 3D “room” you click through — walls, spotlight, smooth transitions between Home, About, Projects, Contact.',
       'Framer Motion for motion, hooks for the intro modal, and Vercel so deploys stay boring (in a good way).',
@@ -25,14 +27,26 @@ const projects = [
   },
   {
     id: 3,
+    name: 'Travel Buddies',
+    stack: ['React', 'Vite'],
+    period: 'Collaborative',
+    github: 'https://github.com/shruti-narayanan27/travelbuddies',
+    notes: [
+      'Trip-planning vibes with friends — split architecture between teammates; my lane was frontend polish and wiring flows together.',
+      'Lightweight Vite + React setup so we could iterate fast.',
+    ],
+  },
+  {
+    id: 4,
     name: '🌱 Sanctuary',
     stack: ['Mobile'],
+    github: 'https://github.com/deepikash4rma/Sanctuary',
     notes: [
       'Ideas around safer commuting and peace of mind on the way home — early UX and direction work.',
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: '🎮 Wonky Kong',
     stack: ['Game'],
     notes: [
@@ -60,6 +74,7 @@ const Projects = () => {
       <div className="project-gallery" role="list">
         {projects.map((project, index) => {
           const isOpen = openId === project.id;
+          const hasLinks = Boolean(project.site || project.github);
           return (
             <article
               key={project.id}
@@ -94,15 +109,29 @@ const Projects = () => {
                     )}
                   </span>
                 </button>
-                {project.link && (
-                  <a
-                    className="project-tile__link"
-                    href={project.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.link.label}
-                  </a>
+                {hasLinks && (
+                  <div className="project-tile__links">
+                    {project.site && (
+                      <a
+                        className="project-tile__link project-tile__link--live"
+                        href={project.site.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.site.label}
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        className="project-tile__link project-tile__link--git"
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
 
