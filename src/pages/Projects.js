@@ -5,108 +5,125 @@ const projects = [
   {
     id: 1,
     name: 'TryMe! Fitness Challenge',
-    stack: 'React, Node.js, MongoDB, Express',
-    period: 'Oct. 2025 – Present',
-    bullets: [
-      'Developed a full-stack fitness tracking platform enabling users to join challenges, log daily check-ins over 7 days, and compete on real-time leaderboards with integrated avatar and profile picture functionality.',
-      'Implemented challenge filtering, progress tracking UI, and user authentication; collaborated using Git feature branch workflows and stress-tested with Artillery for load performance with 15+ beta testers.',
+    stack: ['React', 'Node.js', 'MongoDB', 'Express'],
+    period: 'Oct. 2025 – present',
+    notes: [
+      'Week-long challenges, daily check-ins, and leaderboards that actually update live — plus avatars so it feels a bit more human.',
+      'Built auth and filtering on the side; we used Git branches like grown-ups and threw Artillery at it before a crew of ~15 friends beta tested.',
     ],
   },
   {
     id: 2,
-    name: 'Personal Portfolio Website',
-    stack: 'React, Three.js, Framer Motion',
-    period: 'Jan. 2025 – Present',
+    name: 'This portfolio',
+    stack: ['React', 'Three.js', 'Framer Motion'],
+    period: 'Jan. 2025 – present',
     link: { href: 'https://deepikash4rma.vercel.app', label: 'deepikash4rma.vercel.app' },
-    bullets: [
-      'Designed and developed an interactive 3D gallery-style portfolio with immersive room navigation, dynamic wall transitions, spotlight effects, and smooth animations for Home, About, Projects, and Contact.',
-      'Implemented responsive navigation with Framer Motion, an intro modal with React hooks and state management, and deployed on Vercel for CI and hosting.',
+    notes: [
+      'A 3D “room” you click through — walls, spotlight, smooth transitions between Home, About, Projects, Contact.',
+      'Framer Motion for motion, hooks for the intro modal, and Vercel so deploys stay boring (in a good way).',
     ],
   },
   {
     id: 3,
     name: '🌱 Sanctuary',
-    description:
-      'A mobile app designed to empower and protect women through safer commuting tools.',
+    stack: ['Mobile'],
+    notes: [
+      'Ideas around safer commuting and peace of mind on the way home — early UX and direction work.',
+    ],
   },
   {
     id: 4,
     name: '🎮 Wonky Kong',
-    description:
-      'A Donkey Kong–inspired game with custom art and playful levels.',
+    stack: ['Game'],
+    notes: [
+      'Classic arcade vibes, custom art, levels that don’t take themselves too seriously.',
+    ],
   },
 ];
 
 const Projects = () => {
-  const [flipped, setFlipped] = useState(() => Array(projects.length).fill(false));
+  const [openId, setOpenId] = useState(null);
 
-  const toggleFlip = (index) => {
-    setFlipped((prev) => {
-      const next = [...prev];
-      next[index] = !next[index];
-      return next;
-    });
+  const toggle = (id) => {
+    setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
     <div className="projects-page">
-      <h2 className="gallery-title fade-in">Featured Projects</h2>
-      <p className="gallery-hint">Tap a card to see details</p>
-      <div className="project-gallery">
-        {projects.map((project, index) => (
-          <div
-            key={project.id}
-            className="project-frame fade-in"
-            style={{ '--fade-delay': `${0.1 + index * 0.08}s` }}
-            role="button"
-            tabIndex={0}
-            aria-pressed={flipped[index]}
-            aria-label={`${project.name}. ${flipped[index] ? 'Showing details' : 'Tap to show details'}`}
-            onClick={() => toggleFlip(index)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleFlip(index);
-              }
-            }}
-          >
-            <div className={`flip-card ${flipped[index] ? 'flipped' : ''}`}>
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <div className="flip-card-front-inner">
-                    <h3>{project.name}</h3>
-                    {project.stack && <p className="project-stack">{project.stack}</p>}
-                    {project.period && <p className="project-period">{project.period}</p>}
-                    {project.link && (
-                      <a
-                        className="project-link-front"
-                        href={project.link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {project.link.label}
-                      </a>
+      <header className="projects-header fade-in">
+        <h2 className="gallery-title">Projects</h2>
+        <p className="gallery-sub">
+          Click a frame to read more — click again or pick another to collapse.
+        </p>
+      </header>
+
+      <div className="project-gallery" role="list">
+        {projects.map((project, index) => {
+          const isOpen = openId === project.id;
+          return (
+            <article
+              key={project.id}
+              className={`project-tile fade-in ${isOpen ? 'project-tile--open' : ''}`}
+              style={{ '--fade-delay': `${0.06 + index * 0.05}s` }}
+              role="listitem"
+            >
+              <div className="project-tile__face">
+                <button
+                  type="button"
+                  className="project-tile__trigger"
+                  aria-expanded={isOpen}
+                  aria-controls={`project-panel-${project.id}`}
+                  id={`project-trigger-${project.id}`}
+                  onClick={() => toggle(project.id)}
+                >
+                  <span className="project-tile__frame" aria-hidden />
+                  <span className="project-tile__top">
+                    <span className="project-tile__title">{project.name}</span>
+                    <span className="project-tile__chev" aria-hidden>
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </span>
+                  <span className="project-tile__meta">
+                    {project.stack.map((tag) => (
+                      <span key={tag} className="project-tag">
+                        {tag}
+                      </span>
+                    ))}
+                    {project.period && (
+                      <span className="project-tile__period">{project.period}</span>
                     )}
-                  </div>
-                </div>
-                <div className="flip-card-back">
-                  <div className="flip-card-back-scroll">
-                    {project.bullets ? (
-                      <ul className="project-bullets">
-                        {project.bullets.map((line, i) => (
-                          <li key={i}>{line}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="project-description">{project.description}</p>
-                    )}
+                  </span>
+                </button>
+                {project.link && (
+                  <a
+                    className="project-tile__link"
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.link.label}
+                  </a>
+                )}
+              </div>
+
+              <div
+                className={`project-tile__panel ${isOpen ? 'project-tile__panel--open' : ''}`}
+                id={`project-panel-${project.id}`}
+                role="region"
+                aria-labelledby={`project-trigger-${project.id}`}
+                aria-hidden={!isOpen}
+              >
+                <div className="project-tile__panel-inner">
+                  <div className="project-tile__notes">
+                    {project.notes.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </div>
   );

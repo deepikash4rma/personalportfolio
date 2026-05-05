@@ -26,16 +26,16 @@ const About = () => {
           <p className="club-full-name">Undergraduate Mathematics Student Association</p>
           <p className="role-title"><strong>Vice President</strong></p>
           <p className="role-dates">Feb 2025 – Present</p>
-          <ul className="role-bullets">
-            <li>
-              Lead sponsor outreach and maintain partnerships with 2 external organizations, coordinating logistics for
-              8–10 events per quarter with 100+ attendees per event.
-            </li>
-            <li>
-              Direct 5 functional leads (marketing, communications, outreach, finance, mentorship), overseeing the
-              execution of club initiatives and driving 30%+ growth in engagement.
-            </li>
-          </ul>
+          <div className="role-notes">
+            <p>
+              I work with sponsors and two partner orgs — most events land somewhere past 100 people when the quarter
+              gets busy.
+            </p>
+            <p>
+              Five leads roll up through me (marketing, comms, outreach, finance, mentorship). Engagement’s climbed a
+              lot since we started tightening how we run things.
+            </p>
+          </div>
         </div>
 
         <div className="club-card fade-in" style={{ '--fade-delay': '0.4s' }}>
@@ -45,16 +45,16 @@ const About = () => {
           <p className="club-full-name">Association for Computing Machinery – Women (ACM-W)</p>
           <p className="role-title"><strong>Co-President</strong></p>
           <p className="role-dates">Feb 2026 – Present</p>
-          <ul className="role-bullets">
-            <li>
-              Oversee operations for a community of 50+ members, managing an $8K+ budget, coordinating logistics, and
-              collaborating across ACM committees to execute 6–8 events per quarter.
-            </li>
-            <li>
-              Lead the Technology Fellowship Program, mentoring 50–60 students through full-stack development and
-              product management, with a 90%+ completion rate and 10+ projects delivered in teams.
-            </li>
-          </ul>
+          <div className="role-notes">
+            <p>
+              Day-to-day for 50+ members — budget’s in the single-digit thousands, lots of cross-committee coordination,
+              and we usually land around six to eight events a quarter.
+            </p>
+            <p>
+              The Tech Fellowship is my favorite part: hands-on full-stack and PM mentoring for dozens of students,
+              almost everyone finishes, and teams ship real projects by the end.
+            </p>
+          </div>
         </div>
 
         <div className="club-card fade-in" style={{ '--fade-delay': '0.5s' }}>
@@ -63,11 +63,13 @@ const About = () => {
           </h4>
           <p className="role-title"><strong>Software Engineering Intern</strong></p>
           <p className="role-dates">Mar 2026 – Present</p>
-          <p>
-            Built a conversational table-reasoning workflow with a Next.js/React frontend and a LangGraph/MultiTableAgent
-            backend on AWS Lambda, including streaming responses, fallback handling, exportable table outputs, and
-            persisted per-message thinking/tool status.
-          </p>
+          <div className="role-notes">
+            <p>
+              I’m on a table-reasoning chat flow — Next/React up front, LangGraph and agents on Lambda in the back.
+              Streaming replies, fallbacks when things wobble, exports people can actually use, and UI that shows what
+              the model’s thinking as it works.
+            </p>
+          </div>
         </div>
       </div>
     </div>
