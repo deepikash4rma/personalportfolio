@@ -19,6 +19,22 @@ body {
   line-height: 1.6;
 }
 
+/* Fill viewport: #root had no height, so App/Room collapsed after overflow:hidden */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+#root {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Main app container */
 .App {
   display: flex;
@@ -27,7 +43,7 @@ body {
   justify-content: flex-start;
   width: 100%;
   max-width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
   min-height: 0;
   position: relative;
   overflow: hidden;
